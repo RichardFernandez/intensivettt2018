@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCatvideoTable extends Migration
+class CreateDisciplinasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateCatvideoTable extends Migration
      */
     public function up()
     {
-        Schema::create('catvideo', function (Blueprint $table) {
+        Schema::create('disciplinas', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre_categoria', 100);
+            $table->string('nombre_disciplina', 100);
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ class CreateCatvideoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('catvideo');
+        Schema::dropIfExists('disciplinas');
     }
 }

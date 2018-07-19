@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDisciplinaTable extends Migration
+class CreateMedidasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateDisciplinaTable extends Migration
      */
     public function up()
     {
-        Schema::create('disciplina', function (Blueprint $table) {
+        Schema::create('medidas', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre_disciplina', 100);
+            $table->string('nombre_unidad', 100);
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ class CreateDisciplinaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('disciplina');
+        Schema::dropIfExists('medidas');
     }
 }

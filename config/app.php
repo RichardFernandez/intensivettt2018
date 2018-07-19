@@ -160,6 +160,9 @@ return [
         Intensivettt\Providers\EventServiceProvider::class,
         Intensivettt\Providers\RouteServiceProvider::class,
 
+        /*Mis providers*/
+        Collective\Html\HtmlServiceProvider::class,
+
     ],
 
     /*
@@ -208,6 +211,11 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        /*Mis aliases instalados*/
+
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\HTML\HTMLFacade::class,
 
     ],
 

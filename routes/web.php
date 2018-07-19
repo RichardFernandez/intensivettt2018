@@ -12,6 +12,28 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('inicio');
 });
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+// rutas de administracion
+Route::get('/insumos', function (){
+	return view('backadmin.insumos');
+});
+
+/*
+Route::resource('/insumos', 'InsumosController');
+*/
+
+Route::get('/medidas', 'MedidasController@index');
+
+Route::get('/estados', 'EstadosController@index');
+
+Route::get('/categorias', 'CategoriasController@index');
+
+
 

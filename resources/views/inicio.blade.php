@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Intensivettt - Entrenador personalizado</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -65,29 +65,31 @@
         </style>
     </head>
     <body>
+        {{-- header --}}
         <div class="flex-center position-ref full-height">
+
             @if (Route::has('login'))
                 <div class="top-right links">
+                    <a href="#">IDEOLOGIA INTENSIVETTT</a>
+                    <a href="#">ENTRENADORES</a>
+                    <a href="#">BLOG FITNESS</a>
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
+                        <a href="{{ route('login') }}">Entrar</a>
+                        <a href="{{ route('register') }}">Registrarme</a>
                     @endauth
                 </div>
             @endif
 
+          {{-- Contenido del home --}}
             <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                <div class="galeria">
+                    
+                    <h1>ESFUERZATE. ADPATATE. EVOLUCIONA</h1>
+
+
                 </div>
             </div>
         </div>
