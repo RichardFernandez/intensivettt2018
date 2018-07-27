@@ -1,0 +1,18 @@
+/*Estilos generales*/
+.encabezado{
+	background-color: #0a252d;
+	color: white;
+	padding: 20px;
+	margin: 0 0 20px 0;
+}
+
+.btn-guardar{
+   background-color: #fcbe32;
+   border:1px solid #fcbe60;
+}
+
+.btn-guardar:hover{
+	background-color: #fcbe90;
+    border:1px solid #fcbe00;
+
+}

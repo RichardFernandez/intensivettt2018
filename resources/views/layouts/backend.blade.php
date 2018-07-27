@@ -11,6 +11,7 @@
 
 	<!-- Stilos -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/intesivetttstyles.css') }}">
 
 </head>
 <body>
@@ -25,19 +26,25 @@
 		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 		    <ul class="navbar-nav mr-auto">
 		      <li class="nav-item active">
-		        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+		        <a class="nav-link" href="#">Dashboard <span class="sr-only">(current)</span></a>
 		      </li>
 		      <li class="nav-item">
-		        <a class="nav-link" href="#">Link</a>
+		        <a class="nav-link" href="#">Clientes</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="#">Entrenadores</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="#">Usuarios</a>
 		      </li>
 		      <li class="nav-item dropdown">
 		        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 		          Catálogos 
 		        </a>
 		        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+		          <a class="dropdown-item" href="#">Categorías de video</a>
 		          <a class="dropdown-item" href="#">Disciplinas</a>
 		          <a class="dropdown-item" href="#">Estados</a>
-		          <a class="dropdown-item" href="#">Categorías de video</a>
 		          <a class="dropdown-item" href="#">Marcas de suplementos</a>
 		          <a class="dropdown-item" href="#">Unidades de medida</a>
 		          <a class="dropdown-item" href="#">Permisos</a>
@@ -46,12 +53,18 @@
 		        </div>
 		      </li>
 		      <li class="nav-item">
-		        <a class="nav-link disabled" href="#">Disabled</a>
+		        
 		      </li>
 		    </ul>
 		  </div>
 		</nav>
 	</header><!-- /header -->
+
+	<div class="row text-center encabezado">
+		<div class="col">
+			@yield('titulos')
+		</div>
+	</div>
 
 
     <div class="container">

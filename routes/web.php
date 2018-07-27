@@ -33,7 +33,7 @@ Route::get('/medidas', 'MedidasController@index');
 
 Route::get('/estados', 'EstadosController@index');
 
-Route::get('/categorias', 'CategoriasController@index');
+Route::resource('/categorias', 'CategoriasController');
 
 
 

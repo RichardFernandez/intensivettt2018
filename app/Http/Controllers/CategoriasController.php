@@ -4,6 +4,8 @@ namespace Intensivettt\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Intensivettt\Catvideo;
+
 class CategoriasController extends Controller
 {
     /**
@@ -13,7 +15,8 @@ class CategoriasController extends Controller
      */
     public function index()
     {
-        return view('backadmin.catvideos.index');
+        $categorias = Catvideo::latest()->paginate(10);
+        return view('backadmin.catvideos.index', ["categorias" => $categorias]);
     }
 
     /**
@@ -21,9 +24,18 @@ class CategoriasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $this->validate($request, [
+              'nombre_categoria' => ['required','max:80']],
+              [
+                
+              'nombre_categoria.required' => "Por favor captura la categoria.",
+              'nombre_categoria.max' => "No puedes superar los 80 caracteres."
+
+        ]);
+
+        return view('backadmin.catvideos.index');
     }
 
     /**
@@ -34,7 +46,15 @@ class CategoriasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $categoria = new Catvideo;
+
+        $categoria->nombre_categoria = $request->nombre_categoria;
+
+         if( $categoria->save()){
+            return redirect("/categorias");
+         }else{
+            return redirect("/categorias");
+         }
     }
 
     /**
@@ -56,7 +76,8 @@ class CategoriasController extends Controller
      */
     public function edit($id)
     {
-        //
+          $categoria = Catvideo::find($id);
+          return view("backadmin.catvideos.index", compact("categoria"));
     }
 
     /**
@@ -79,6 +100,9 @@ class CategoriasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Catvideo::destroy($id);
+
+        return redirect('/categorias');
+
     }
 }
