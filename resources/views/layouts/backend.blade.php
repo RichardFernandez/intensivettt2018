@@ -45,9 +45,9 @@
 		          <a class="dropdown-item" href="{{ url('/categorias')}}">Categorías de video</a>
 		          <a class="dropdown-item" href="{{ url('/disciplinas') }}">Disciplinas</a>
 		          <a class="dropdown-item" href="{{ url('/estados') }}">Estados</a>
-		          <a class="dropdown-item" href="#">Marcas de suplementos</a>
-		          <a class="dropdown-item" href="#">Unidades de medida</a>
-		          <a class="dropdown-item" href="#">Permisos</a>
+		          <a class="dropdown-item" href="{{ url('/marcas') }}">Marcas de suplementos</a>
+		          <a class="dropdown-item" href="{{ url('/medidas') }}">Unidades de medida</a>
+		          <a class="dropdown-item" href="{{ url('/permisos') }}">Permisos</a>
 		          <div class="dropdown-divider"></div>
 		          <a class="dropdown-item" href="#">Something else here</a>
 		        </div>

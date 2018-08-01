@@ -28,6 +28,8 @@ Route::resource('/disciplinas', 'DisciplinasController');
 
 Route::resource('/estados', 'EstadosController');
 
+Route::resource('/marcas', 'MarcasController');
+
 Route::get('/medidas', 'MedidasController@index');
 
 
