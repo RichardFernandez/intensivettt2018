@@ -4,6 +4,8 @@ namespace Intensivettt\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Intensivettt\Estado;
+
 class EstadosController extends Controller
 {
     /**
@@ -13,7 +15,8 @@ class EstadosController extends Controller
      */
     public function index()
     {
-        return view('backadmin.estados.index');
+        $estados = Estado::latest()->paginate(10);
+        return view('backadmin.estados.index', ["estados" => $estados]);
     }
 
     /**
@@ -34,7 +37,17 @@ class EstadosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $estado = new Estado;
+        $estado->nombre_estado = $request->nombre_estado;
+
+        if( $estado->save()){
+            return redirect("/estados");
+        }
+        else{
+            return redirect("/estados");
+        }
+
+
     }
 
     /**

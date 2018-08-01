@@ -26,9 +26,10 @@ Route::resource('/categorias', 'CategoriasController');
 
 Route::resource('/disciplinas', 'DisciplinasController');
 
+Route::resource('/estados', 'EstadosController');
+
 Route::get('/medidas', 'MedidasController@index');
 
-Route::get('/estados', 'EstadosController@index');
 
 
 
