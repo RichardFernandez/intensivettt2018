@@ -21,19 +21,14 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 // rutas de administracion
-Route::get('/insumos', function (){
-	return view('backadmin.insumos');
-});
 
-/*
-Route::resource('/insumos', 'InsumosController');
-*/
+Route::resource('/categorias', 'CategoriasController');
+
+Route::resource('/disciplinas', 'DisciplinasController');
 
 Route::get('/medidas', 'MedidasController@index');
 
 Route::get('/estados', 'EstadosController@index');
-
-Route::resource('/categorias', 'CategoriasController');
 
 
 

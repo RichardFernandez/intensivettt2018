@@ -42,8 +42,8 @@
 		          Catálogos 
 		        </a>
 		        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-		          <a class="dropdown-item" href="#">Categorías de video</a>
-		          <a class="dropdown-item" href="#">Disciplinas</a>
+		          <a class="dropdown-item" href="{{ url('/categorias')}}">Categorías de video</a>
+		          <a class="dropdown-item" href="{{ url('/disciplinas') }}">Disciplinas</a>
 		          <a class="dropdown-item" href="#">Estados</a>
 		          <a class="dropdown-item" href="#">Marcas de suplementos</a>
 		          <a class="dropdown-item" href="#">Unidades de medida</a>
