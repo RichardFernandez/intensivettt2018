@@ -32,6 +32,8 @@ Route::resource('/marcas', 'MarcasController');
 
 Route::resource('/medidas', 'MedidasController');
 
+Route::resource('/frases', 'FrasesController');
+
 
 
 
