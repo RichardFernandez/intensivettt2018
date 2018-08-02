@@ -16,7 +16,7 @@ class MedidasController extends Controller
     public function index()
     {
         /*Obtenemos todos los registros de la base de datos*/
-        $medidas = Medida::all();
+        $medidas = Medida::latest()->paginate(10);
 
         // Desplegamos los resultados en la vista.
 
@@ -41,7 +41,17 @@ class MedidasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $unidad = new Medida;
+
+        $unidad->nombre_unidad = $request->nombre_unidad;
+
+        if($unidad->save()){
+            return redirect("/medidas");
+        }
+        else{
+            return redirect("/medidas");
+        }
+
     }
 
     /**

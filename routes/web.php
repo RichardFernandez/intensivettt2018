@@ -30,7 +30,7 @@ Route::resource('/estados', 'EstadosController');
 
 Route::resource('/marcas', 'MarcasController');
 
-Route::get('/medidas', 'MedidasController@index');
+Route::resource('/medidas', 'MedidasController');
 
 
 
