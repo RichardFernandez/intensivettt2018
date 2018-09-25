@@ -50,7 +50,9 @@
 		          <a class="dropdown-item" href="{{ url('/permisos') }}">Permisos</a>
 		          <a class="dropdown-item" href="{{ url('/frases') }}">Frases motivadoras</a>
 		          <div class="dropdown-divider"></div>
-		          <a class="dropdown-item" href="#">Something else here</a>
+		          <a class="dropdown-item" href="{{ url('/suplementos') }}">Suplementos</a>
+		          <a class="dropdown-item" href="{{ url('/videos') }}">Videos</a>
+		          <a class="dropdown-item" href="{{ url('/insumos') }}">Insumos</a>
 		        </div>
 		      </li>
 		      <li class="nav-item">

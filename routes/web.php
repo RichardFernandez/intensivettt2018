@@ -20,7 +20,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-// rutas de administracion
+// RUTAS DE BACKEND CATALOGOS
+
+/*Rutas de primer nivel*/
 
 Route::resource('/categorias', 'CategoriasController');
 
@@ -33,6 +35,15 @@ Route::resource('/marcas', 'MarcasController');
 Route::resource('/medidas', 'MedidasController');
 
 Route::resource('/frases', 'FrasesController');
+
+/*Rutas de segundo nivel*/
+
+Route::resource('/suplementos', 'SuplementosController');
+
+Route::resource('/insumos', 'InsumosController');
+
+Route::resource('/videos', 'VideosController');
+
 
 
 
