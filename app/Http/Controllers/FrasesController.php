@@ -69,7 +69,12 @@ class FrasesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $frase = Frase::find($id);
+        $frases = Frase::latest()->paginate(10);
+
+        return view('backadmin.frases.index')
+        ->with('fraseEdit', $frase)
+        ->with('frases', $frases); 
     }
 
     /**
@@ -81,7 +86,15 @@ class FrasesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $frase = Frase::find($id);
+
+        $frase->frase = $request->frase;
+
+        $frase->save();
+
+        // flash('Se actualizo con éxito el registro')->success();
+
+         return redirect('/frases');
     }
 
     /**
@@ -92,6 +105,8 @@ class FrasesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Frase::destroy($id);
+
+        return redirect('/frases');
     }
 }

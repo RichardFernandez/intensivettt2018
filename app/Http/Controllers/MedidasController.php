@@ -73,7 +73,12 @@ class MedidasController extends Controller
      */
     public function edit($id)
     {
-        //
+        $medida = Medida::find($id);
+        $medidas = Medida::latest()->paginate(10);
+
+        return view('backadmin.medidas.index')
+        ->with('unidadEdit', $medida)
+        ->with('medidas', $medidas); 
     }
 
     /**
@@ -85,7 +90,15 @@ class MedidasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $unidad = Medida::find($id);
+
+        $unidad->nombre_unidad = $request->nombre_unidad;
+
+        $unidad->save();
+
+        // flash('Se actualizo con éxito el registro')->success();
+
+         return redirect('/medidas');
     }
 
     /**
@@ -96,6 +109,8 @@ class MedidasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Medida::destroy($id);
+
+        return redirect('/marcas');
     }
 }

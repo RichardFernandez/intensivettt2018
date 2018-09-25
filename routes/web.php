@@ -25,16 +25,27 @@ Route::get('/home', 'HomeController@index')->name('home');
 /*Rutas de primer nivel*/
 
 Route::resource('/categorias', 'CategoriasController');
+Route::get('categorias/{id}/destroy', 'CategoriasController@destroy');
 
 Route::resource('/disciplinas', 'DisciplinasController');
+Route::get('disciplinas/{id}/destroy', 'DisciplinasController@destroy');
+
 
 Route::resource('/estados', 'EstadosController');
+Route::get('estados/{id}/destroy', 'EstadosController@destroy');
+
 
 Route::resource('/marcas', 'MarcasController');
+Route::get('marcas/{id}/destroy', 'MarcasController@destroy');
+
 
 Route::resource('/medidas', 'MedidasController');
+Route::get('medidas/{id}/destroy', 'MedidasController@destroy');
+
 
 Route::resource('/frases', 'FrasesController');
+Route::get('frases/{id}/destroy', 'FrasesController@destroy');
+
 
 /*Rutas de segundo nivel*/
 

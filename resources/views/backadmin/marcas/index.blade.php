@@ -13,6 +13,27 @@
  {{-- seccion para capturar nuev categoria de video --}}
     <div class="row">
       <div class="col-12">
+        @if(isset($marcaEdit))
+              <h3>Ya puedes editar el registro!!</h3>
+
+              {{ Form::open(['route' => ['marcas.update', $marcaEdit->id], 'method' => 'PUT']) }}
+                <div class="row">
+                   <div class="col-4">
+                    <div class="form-group">  
+                      {{ Form::text('nombre_marca',$marcaEdit->nombre_marca,['class' => 'form-control']) }}
+                    </div>
+                   </div>
+                   <div class="col-8">
+                    <div class="form-group">
+                      {{ Form::submit('Guardar cambios', ['class' => 'btn btn-success btn-blue']) }}
+                      <a href="{{ route('marcas.index') }}" class="btn-secondary">Cancelar</a>
+                    </div>
+                   </div>
+                  
+                </div>
+             {{ Form::close() }}
+
+      @else
         {!! Form::open(['url' => '/marcas', 'method' => 'POST']) !!}
           <div class="row">
             <div class="col-6">
@@ -33,6 +54,7 @@
            </div>
           </div>
         {!! Form::close() !!}
+        @endif
       </div>
         
     </div>
@@ -55,8 +77,8 @@
    					<tr>
                <td>{{ $marca->nombre_marca }}</td>    
                <td>
-                <a href="{{ url('/marcas/'.$marca->id.'/edit') }}">Editar</a><span> |</span>
-                <a href="{{ url('/marcas/'.$marca->id.'/delete') }}">Eliminar</a>
+                <a href="{{ route('marcas.edit', $marca->id) }}" class="alert alert-warning"><i class="fas fa-edit"></i></a><span> |</span>
+                <a href="{{ url('/marcas/'.$marca->id.'/destroy') }}" class="alert alert-danger"><i class="fas fa-minus-square"></i></a>
               </td>
                
             </tr>

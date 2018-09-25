@@ -77,7 +77,11 @@ class CategoriasController extends Controller
     public function edit($id)
     {
           $categoria = Catvideo::find($id);
-          return view("backadmin.catvideos.index", compact("categoria"));
+          $categorias = Catvideo::latest()->paginate(10);
+
+          return view('backadmin.catvideos.index')
+          ->with('categoriaEdit', $categoria)
+          ->with('categorias', $categorias);
     }
 
     /**
@@ -89,7 +93,15 @@ class CategoriasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $categoria = Catvideo::find($id);
+
+        $categoria->nombre_categoria = $request->nombre_categoria;
+
+        $categoria->save();
+
+        // flash('Se actualizo con éxito el registro')->success();
+
+         return redirect('/categorias');
     }
 
     /**

@@ -16,3 +16,8 @@
     border:1px solid #fcbe00;
 
 }
+
+.btn-secondary{
+   border-radius: 5px;
+   padding:10px 20px;
+}

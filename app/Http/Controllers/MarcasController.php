@@ -69,19 +69,26 @@ class MarcasController extends Controller
      */
     public function edit($id)
     {
-        //
-    }
+        $marca = Marcasuplemento::find($id);
+        $marcas = Marcasuplemento::latest()->paginate(10);
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+        return view('backadmin.marcas.index')
+        ->with('marcaEdit', $marca)
+        ->with('marcas', $marcas); 
+
+  
+}
     public function update(Request $request, $id)
     {
-        //
+        $marca = Marcasuplemento::find($id);
+
+        $marca->nombre_marca = $request->nombre_marca;
+
+        $marca->save();
+
+        // flash('Se actualizo con éxito el registro')->success();
+
+         return redirect('/marcas');
     }
 
     /**
@@ -92,6 +99,8 @@ class MarcasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Marcasuplemento::destroy($id);
+
+        return redirect('/marcas');
     }
 }

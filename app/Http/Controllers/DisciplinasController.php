@@ -69,7 +69,12 @@ class DisciplinasController extends Controller
      */
     public function edit($id)
     {
-        //
+        $disciplina = Disciplina::find($id);
+        $disciplinas = Disciplina::latest()->paginate(10);
+
+        return view('backadmin.disciplinas.index')
+        ->with('disciplinaEdit', $disciplina)
+        ->with('disciplinas', $disciplinas);
     }
 
     /**
@@ -81,7 +86,15 @@ class DisciplinasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $disciplina = Disciplina::find($id);
+
+        $disciplina->nombre_disciplina = $request->nombre_disciplina;
+
+        $disciplina->save();
+
+        // flash('Se actualizo con éxito el registro')->success();
+
+         return redirect('/disciplinas');
     }
 
     /**
@@ -92,6 +105,8 @@ class DisciplinasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Disciplina::destroy($id);
+
+        return redirect('/disciplinas');
     }
 }

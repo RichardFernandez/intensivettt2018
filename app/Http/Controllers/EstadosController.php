@@ -69,7 +69,12 @@ class EstadosController extends Controller
      */
     public function edit($id)
     {
-        //
+        $estado = Estado::find($id);
+        $estados = Estado::latest()->paginate(10);
+
+        return view('backadmin.estados.index')
+        ->with('estadoEdit', $estado)
+        ->with('estados', $estados);    
     }
 
     /**
@@ -81,7 +86,15 @@ class EstadosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $estado = Estado::find($id);
+
+        $estado->nombre_estado = $request->nombre_estado;
+
+        $estado->save();
+
+        // flash('Se actualizo con éxito el registro')->success();
+
+         return redirect('/estados');
     }
 
     /**
@@ -92,6 +105,8 @@ class EstadosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Estado::destroy($id);
+
+        return redirect('/estados');
     }
 }

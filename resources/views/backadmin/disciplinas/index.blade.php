@@ -13,6 +13,27 @@
  {{-- seccion para capturar nuev categoria de video --}}
     <div class="row">
       <div class="col-12">
+         @if(isset($disciplinaEdit))
+              <h3>Ya puedes editar el registro!!</h3>
+
+              {{ Form::open(['route' => ['disciplinas.update', $disciplinaEdit->id], 'method' => 'PUT']) }}
+                <div class="row">
+                   <div class="col-4">
+                    <div class="form-group">  
+                      {{ Form::text('nombre_disciplina',$disciplinaEdit->nombre_disciplina,['class' => 'form-control']) }}
+                    </div>
+                   </div>
+                   <div class="col-8">
+                    <div class="form-group">
+                      {{ Form::submit('Guardar cambios', ['class' => 'btn btn-success btn-blue']) }}
+                      <a href="{{ route('disciplinas.index') }}" class="btn-secondary">Cancelar</a>
+                    </div>
+                   </div>
+                  
+                </div>
+             {{ Form::close() }}
+
+      @else
         {!! Form::open(['url' => '/disciplinas', 'method' => 'POST']) !!}
           <div class="row">
             <div class="col-6">
@@ -33,6 +54,7 @@
            </div>
           </div>
         {!! Form::close() !!}
+      @endif  
       </div>
         
     </div>
@@ -55,8 +77,8 @@
    					<tr>
                <td>{{ $disciplina->nombre_disciplina }}</td>    
                <td>
-                <a href="{{ url('/disciplinas/'.$disciplina->id.'/edit') }}">Editar</a><span> |</span>
-                <a href="{{ url('/disciplinas/'.$disciplina->id.'/delete') }}">Eliminar</a>
+                <a href="{{ route('disciplinas.edit', $disciplina->id) }}" class="alert alert-warning"><i class="fas fa-edit"></i></a><span> |</span>
+                <a href="{{ url('/disciplinas/'.$disciplina->id.'/destroy') }}" class="alert alert-danger"><i class="fas fa-minus-square"></i></a>
               </td>
                
             </tr>

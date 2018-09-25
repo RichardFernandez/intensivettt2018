@@ -12,6 +12,7 @@
 	<!-- Stilos -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/intesivetttstyles.css') }}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
 </head>
 <body>
@@ -47,7 +48,6 @@
 		          <a class="dropdown-item" href="{{ url('/estados') }}">Estados</a>
 		          <a class="dropdown-item" href="{{ url('/marcas') }}">Marcas de suplementos</a>
 		          <a class="dropdown-item" href="{{ url('/medidas') }}">Unidades de medida</a>
-		          <a class="dropdown-item" href="{{ url('/permisos') }}">Permisos</a>
 		          <a class="dropdown-item" href="{{ url('/frases') }}">Frases motivadoras</a>
 		          <div class="dropdown-divider"></div>
 		          <a class="dropdown-item" href="{{ url('/suplementos') }}">Suplementos</a>
