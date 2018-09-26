@@ -69,7 +69,8 @@
    				<thead class="thead-dark">
    					<tr>
    						<th>Frase</th>
-   						<th>Acciones</th>
+   						<th>Editar</th>
+              <th>Eliminar</th>
    					</tr>
    				</thead>
    				<tbody>
@@ -77,7 +78,9 @@
    					<tr>
                <td>{{ $frase->frase}}</td>    
                <td>
-                <a href="{{ route('frases.edit', $frase->id) }}" class="alert alert-warning"><i class="fas fa-edit"></i></a><span> |</span>
+                <a href="{{ route('frases.edit', $frase->id) }}" class="alert alert-warning"><i class="fas fa-edit"></i></a>
+               </td>
+               <td>
                 <a href="{{ url('/frases/'.$frase->id.'/destroy') }}" class="alert alert-danger"><i class="fas fa-minus-square"></i></a>
               </td>
                

@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 
 use Intensivettt\Suplemento;
 
-use Intensivettt\Marca;
+use Intensivettt\Marcasuplemento;
+
+use Intensivettt\Image;
 
 class SuplementosController extends Controller
 {
@@ -17,9 +19,9 @@ class SuplementosController extends Controller
      */
     public function index()
     {
-        $suplementos = Suplemento::latest()->paginate(10);
+        $suplementos = Suplemento::with('marcasuplemento')->latest()->paginate(10);
 
-        return view('backadmin.suplementos.index', compact($suplementos));
+        return view('backadmin.suplementos.index', compact('suplementos'));
     }
 
     /**
@@ -29,7 +31,8 @@ class SuplementosController extends Controller
      */
     public function create()
     {
-        return view('backadmin.suplementos.create');
+        $marcas = Marcasuplemento::orderBy('nombre_marca', 'ASC')->pluck('nombre_marca', 'id');
+        return view('backadmin.suplementos.create')->with('marcas', $marcas);
     }
 
     /**
@@ -40,7 +43,22 @@ class SuplementosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //manipulacion de imagenes
+        if($request->file('imagen')){
+            $file = $request->file('imagen');
+            $name = 'suplemento_'.time().'.'.$file->getClientOriginalExtension();
+            $path = public_path().'/sisimages/suplementos';
+            $file->move($path, $name);
+        }
+
+        $suplemento = New Suplemento($request->all());
+        $suplemento->imagen = $name;
+        $suplemento->save();
+
+        return redirect('suplementos');
+
+        
+
     }
 
     /**
@@ -85,6 +103,8 @@ class SuplementosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Suplemento::destroy($id);
+
+        return redirect('/suplementos');
     }
 }

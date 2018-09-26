@@ -13,13 +13,13 @@
    	<div class="col-6">
    		{{ Form::open(['route'=>'suplementos.store', 'method' => 'POST', 'files' => true]) }}
             <div class="form-group">
-            	{{ Form::text('nombre_suplemento', '',['class' => 'form-control', 'placeholder' => 'Escribe el nombre del suplemento']) }}
+            	{{ Form::text('nombre_suplemento', '',['class' => 'form-control', 'placeholder' => 'Nombre del suplemento', 'required']) }}
             </div>
             <div class="form-group">
-            	{{ Form::select('tipo_suplemento', ['Proteinas' => 'Proteinas', 'Vitaminas' => 'Vitaminas', 'Termogenicos' => 'Termogenicos', 'Preentrenamientos' => 'Preentrenamientos', 'Reductores' => 'Reductores', 'Creatinas' => 'Creatinas', 'Glutaminas' => 'Glutaminas', 'Aminoacidos' => 'Aminoacidos', 'Variados' => 'Variados'], null, ['class' => 'form-control']) }}
+            	{{ Form::select('tipo_suplemento', ['' => 'Selecciona el tipo de suplemento','Proteinas' => 'Proteinas', 'Vitaminas' => 'Vitaminas', 'Termogenicos' => 'Termogenicos', 'Preentrenamientos' => 'Preentrenamientos', 'Reductores' => 'Reductores', 'Creatinas' => 'Creatinas', 'Glutaminas' => 'Glutaminas', 'Aminoacidos' => 'Aminoacidos', 'Variados' => 'Variados'], null, ['class' => 'form-control', 'required']) }}
             </div>
             <div class="form-group">
-            	{{ Form::text('marca', '',['class' => 'form-control', 'placeholder' => 'Escribe el nombre del suplemento']) }}
+            	{{ Form::select('marca', $marcas, null,['class' => 'form-control', 'placeholder' => 'Selecciona la marca']) }}
             </div>
             <div class="form-group">
             	{{ Form::file('imagen',['class' => 'form-control']) }}

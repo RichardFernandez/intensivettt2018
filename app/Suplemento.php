@@ -6,14 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Suplemento extends Model
 {
-    protected $filable = [
+    protected $fillable = [
       "nombre_suplemento",
       "tipo_suplemento",
-      "categoria",
+      "imagen",
+      "marca"
     ];
 
     public function marcasuplemento(){
-    	return $this->belongsTo('Intensivettt\Marcasuplemento');
+    	return $this->belongsTo('Intensivettt\Marcasuplemento', 'marca');
     }
 }
 

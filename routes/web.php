@@ -50,6 +50,8 @@ Route::get('frases/{id}/destroy', 'FrasesController@destroy');
 /*Rutas de segundo nivel*/
 
 Route::resource('/suplementos', 'SuplementosController');
+Route::get('suplementos/{id}/destroy', 'SuplementosController@destroy');
+
 
 Route::resource('/insumos', 'InsumosController');
 
