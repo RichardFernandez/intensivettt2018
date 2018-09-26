@@ -80,7 +80,11 @@ class SuplementosController extends Controller
      */
     public function edit($id)
     {
-        //
+        $marcas = Marcasuplemento::orderBy('nombre_marca', 'ASC')->pluck('nombre_marca', 'id');
+        $suplemento = Suplemento::find($id);
+        return view('backadmin.suplementos.edit')
+        ->with('suplemento', $suplemento)
+        ->with('marcas', $marcas);
     }
 
     /**
@@ -92,7 +96,27 @@ class SuplementosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if($request->file('imagen')){
+            $file = $request->file('imagen');
+            $name = 'suplemento_'.time().'.'.$file->getClientOriginalExtension();
+            $path = public_path().'/sisimages/suplementos';
+            $file->move($path, $name);
+
+            $suplemento = Suplemento::find($id);
+            $suplemento->fill($request->all());
+            $suplemento->imagen = $name;
+            // dd($medico);
+           
+        }
+        else{
+
+            $suplemento = Suplemento::find($id);
+            $suplemento->fill($request->all());
+        }
+        
+        $suplemento->update();
+        return redirect('/suplementos');
+     
     }
 
     /**
