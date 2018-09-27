@@ -27,6 +27,7 @@
             </div>
             <div class="form-group">
             	{{ Form::submit('Guardar registro',['class' => 'btn btn-success btn-guardar']) }}
+               <a href="{{ route('suplementos.index') }}" class="btn-secondary">Cancelar</a>
             </div>
    		{{ Form::close() }}
    	</div>
