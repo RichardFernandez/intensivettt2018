@@ -3,6 +3,7 @@
 namespace Intensivettt\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Intensivettt\Insumo;
 
 class InsumosController extends Controller
 {
@@ -13,7 +14,8 @@ class InsumosController extends Controller
      */
     public function index()
     {
-        //
+        $insumos = Insumo::latest()->paginate(10);
+        return view('backadmin.insumos.index', ["insumos" => $insumos]);
     }
 
     /**
@@ -34,7 +36,15 @@ class InsumosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $insumo = new Insumo;
+        $insumo->nombre_insumo = $request->nombre_insumo;
+
+        if( $insumo->save()){
+            return redirect("/insumos");
+        }
+        else{
+            return redirect("/insumos");
+        }
     }
 
     /**
@@ -56,7 +66,12 @@ class InsumosController extends Controller
      */
     public function edit($id)
     {
-        //
+        $insumo = Insumo::find($id);
+        $insumos = Insumo::latest()->paginate(10);
+
+        return view('backadmin.insumos.index')
+        ->with('insumoEdit', $insumo)
+        ->with('insumos', $insumos);
     }
 
     /**
@@ -68,7 +83,15 @@ class InsumosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $insumo = Insumo::find($id);
+
+        $insumo->nombre_insumo = $request->nombre_insumo;
+
+        $insumo->save();
+
+        // flash('Se actualizo con éxito el registro')->success();
+
+         return redirect('/insumos');
     }
 
     /**
@@ -79,6 +102,8 @@ class InsumosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Insumo::destroy($id);
+
+        return redirect('/insumos');
     }
 }

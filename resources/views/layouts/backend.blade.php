@@ -52,7 +52,10 @@
 		          <div class="dropdown-divider"></div>
 		          <a class="dropdown-item" href="{{ url('/suplementos') }}">Suplementos</a>
 		          <a class="dropdown-item" href="{{ url('/videos') }}">Videos</a>
-		          <a class="dropdown-item" href="{{ url('/insumos') }}">Insumos</a>
+		          <div class="dropdown-divider"></div>
+		          <a class="dropdown-item" href="{{ url('/insumos') }}">Insumos de recetas</a>
+		          <a class="dropdown-item" href="{{ url('/recetas') }}">Recetas</a>
+
 		        </div>
 		      </li>
 		      <li class="nav-item">

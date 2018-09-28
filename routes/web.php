@@ -46,6 +46,9 @@ Route::get('medidas/{id}/destroy', 'MedidasController@destroy');
 Route::resource('/frases', 'FrasesController');
 Route::get('frases/{id}/destroy', 'FrasesController@destroy');
 
+Route::resource('/insumos', 'InsumosController');
+Route::get('insumos/{id}/destroy', 'InsumosController@destroy');
+
 
 /*Rutas de segundo nivel*/
 
