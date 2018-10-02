@@ -38,6 +38,8 @@ class InsumosController extends Controller
     {
         $insumo = new Insumo;
         $insumo->nombre_insumo = $request->nombre_insumo;
+        $insumo->tipo = $request->tipo;
+
 
         if( $insumo->save()){
             return redirect("/insumos");
@@ -86,6 +88,8 @@ class InsumosController extends Controller
         $insumo = Insumo::find($id);
 
         $insumo->nombre_insumo = $request->nombre_insumo;
+        $insumo->tipo = $request->tipo;
+
 
         $insumo->save();
 

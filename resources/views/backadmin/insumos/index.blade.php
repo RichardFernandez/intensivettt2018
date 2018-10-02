@@ -36,7 +36,7 @@
       @else
         {!! Form::open(['url' => '/insumos', 'method' => 'POST']) !!}
           <div class="row">
-            <div class="col-6">
+            <div class="col-4">
                <div class="form-group">
                {{ Form::text('nombre_insumo','',['class' => 'form-control', 'placeholder'=>'Escribe el insumo']) }}
                @if ($errors->any())
@@ -46,8 +46,13 @@
                @endif
               </div>
             </div>
+            <div class="col-4">
+               <div class="form-group">
+               {{ Form::select('tipo',['frutas' => "Frutas", 'vegetales' => 'Vegetales', 'carnes' => 'Carnes', 'condimentos' => 'Condimentos'],'',['class' => 'form-control', 'placeholder'=>'Selecciona el tipo', 'required']) }}
+              </div>
+            </div>
             
-           <div class="col-6">
+           <div class="col-4">
              <div class="form-group offset-1">
              {{ Form::submit('Guardar registro',['class' => 'btn btn-success btn-guardar'] )}}
              </div>
@@ -69,13 +74,16 @@
           <thead class="thead-dark">
             <tr>
               <th>Nombre del insumo</th>
+              <th>Tipo</th>
               <th>Acciones</th>
+              
             </tr>
           </thead>
           <tbody>
            @forelse($insumos as $insumo) 
             <tr>
                <td>{{ $insumo->nombre_insumo }}</td>    
+               <td>{{ $insumo->tipo }}</td>    
                <td>
                 <a href="{{ route('insumos.edit', $insumo->id) }}" class="alert alert-warning"><i class="fas fa-edit"></i></a><span> |</span>
                 <a href="{{ url('/insumos/'.$insumo->id.'/destroy') }}" class="alert alert-danger"><i class="fas fa-minus-square"></i></a>
