@@ -48,7 +48,7 @@
             </div>
             <div class="col-4">
                <div class="form-group">
-               {{ Form::select('tipo',['frutas' => "Frutas", 'vegetales' => 'Vegetales', 'carnes' => 'Carnes', 'condimentos' => 'Condimentos', 'legumbres' => 'Legumbres', 'grasas' => 'Grasas'],'',['class' => 'form-control', 'placeholder'=>'Selecciona el tipo', 'required']) }}
+               {{ Form::select('tipo',['frutas' => "Frutas", 'vegetales' => 'Vegetales', 'carnes' => 'Carnes', 'condimentos' => 'Condimentos', 'legumbres' => 'Legumbres', 'grasas' => 'Grasas', 'lacteos' => 'Lacteos'],'',['class' => 'form-control', 'placeholder'=>'Selecciona el tipo', 'required']) }}
               </div>
             </div>
             
