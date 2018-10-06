@@ -49,6 +49,8 @@
 		          <a class="dropdown-item" href="{{ url('/marcas') }}">Marcas de suplementos</a>
 		          <a class="dropdown-item" href="{{ url('/medidas') }}">Unidades de medida</a>
 		          <a class="dropdown-item" href="{{ url('/frases') }}">Frases motivadoras</a>
+		          <a class="dropdown-item" href="{{ url('/bebidas') }}">Bebidas</a>
+
 		          <div class="dropdown-divider"></div>
 		          <a class="dropdown-item" href="{{ url('/suplementos') }}">Suplementos</a>
 		          <a class="dropdown-item" href="{{ url('/videos') }}">Videos</a>
