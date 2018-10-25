@@ -62,6 +62,7 @@ Route::get('suplementos/{id}/destroy', 'SuplementosController@destroy');
 Route::resource('/insumos', 'InsumosController');
 
 Route::resource('/videos', 'VideosController');
+Route::get('videos/{id}/destroy', 'VideosController@destroy');
 
 
 

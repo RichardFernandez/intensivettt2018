@@ -22,6 +22,7 @@
             	{{ Form::select('marca', $categorias, $video->categoria_id,['class' => 'form-control', 'required']) }}
             </div>
             <div class="form-group">
+               <img src="{{ '/sisimages/videos/'.$video->imagen }}" width="200">
             	{{ Form::file('imagen',['class' => 'form-control']) }}
             </div>
             <div class="form-group">

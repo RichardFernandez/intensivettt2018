@@ -72,7 +72,11 @@ class VideosController extends Controller
      */
     public function edit($id)
     {
-        //
+        $categorias = Catvideo::orderBy('id', 'ASC')->pluck('nombre_categoria', 'id');
+        $video = Video::with('categoria')->find($id);
+        return view('backadmin.videos.edit')
+        ->with('video', $video)
+        ->with('categorias', $categorias);
     }
 
     /**
@@ -84,7 +88,26 @@ class VideosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if($request->file('imagen')){
+            $file = $request->file('imagen');
+            $name = 'video_'.time().'.'.$file->getClientOriginalExtension();
+            $path = public_path().'/sisimages/videos';
+            $file->move($path, $name);
+
+            $video = Video::find($id);
+            $video->fill($request->all());
+            $video->imagen = $name;
+            // dd($medico);
+           
+        }
+        else{
+
+            $video = Video::find($id);
+            $video->fill($request->all());
+        }
+        
+        $video->update();
+        return redirect('/videos');
     }
 
     /**
@@ -95,6 +118,8 @@ class VideosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Video::destroy($id);
+
+        return redirect('/videos');
     }
 }
