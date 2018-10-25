@@ -7,10 +7,11 @@
 	<title></title>
 
 	<!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('assets/chosen/chosen.jquery.js') }}"></script>
 	<!-- Stilos -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/chosen/chosen.css')}}" rel="stylesheet" >
     <link rel="stylesheet" href="{{ asset('css/intesivetttstyles.css') }}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 

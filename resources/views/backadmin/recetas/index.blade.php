@@ -29,25 +29,27 @@
           <thead class="thead-dark">
             <tr>
               <th>Nombre de receta</th>
-              <th></th>
-              <th>Tipo</th>
+              <th>Masotipo</th>
+              <th>Imagen</th>
+              <th>Video</th>
               <th>Ver</th>
               <th>Editar</th>
               <th>Eliminar</th>
             </tr>
           </thead>
           <tbody>
-           @forelse($suplementos as $suplemento) 
+           @forelse($recetas as $receta) 
             <tr>
                <td><img src="{{ 'sisimages/suplementos/'.$suplemento->imagen }}" width="100"></td>
-               <td>{{ $suplemento->nombre_suplemento }}</td>
-               <td>{{ $suplemento->tipo_suplemento }}</td>        
-               <td>{{ $suplemento->marcasuplemento->nombre_marca }}</td>      
+               <td>{{ $receta->nombre_receta }}</td>
+               <td>{{ $receta->masotipo }}</td>        
+               <td>{{ $receta->imagen }}</td>      
+               <td>{{ $receta->video }}</td>      
                <td>
-                <a href="{{ route('suplementos.edit', $suplemento->id) }}" class="alert alert-warning"><i class="fas fa-edit"></i></a>
+                <a href="{{ route('recetas.edit', $receta->id) }}" class="alert alert-warning"><i class="fas fa-edit"></i></a>
               </td>
               <td>
-                <a href="{{ url('/suplementos/'.$suplemento->id.'/destroy') }}" class="alert alert-danger"><i class="fas fa-minus-square"></i></a>
+                <a href="{{ url('/recetas/'.$receta->id.'/destroy') }}" class="alert alert-danger"><i class="fas fa-minus-square"></i></a>
               </td>
                
             </tr>
@@ -61,8 +63,8 @@
     </div>
     <div class="row">
       <div class="col">
-        @if(count($suplementos))
-          <p>{{ $suplementos }}</p> 
+        @if(count($recetas))
+          <p>{{ $recetas }}</p> 
         @endif
       </div>
     </div>

@@ -3,11 +3,8 @@
 namespace Intensivettt\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Intensivettt\Receta;
-use Intensivettt\Insumo;
-use Intensivettt\Medida;
 
-class RecetasController extends Controller
+class PasosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +13,7 @@ class RecetasController extends Controller
      */
     public function index()
     {
-        $recetas =  Receta::latest()->paginate(10);
-        return view('backadmin.recetas.index')
-        ->with('recetas', $recetas);
+        //
     }
 
     /**
@@ -28,11 +23,7 @@ class RecetasController extends Controller
      */
     public function create()
     {
-        $insumos = Insumo::orderBy('nombre_insumo', 'ASC')->pluck('nombre_insumo', 'id');
-        $medidas = Medida::orderBy('nombre_unidad', 'ASC')->pluck('nombre_unidad', 'id');
-        return view('backadmin.recetas.create')
-        ->with('insumos', $insumos)
-        ->with('medidas', $medidas);
+        //
     }
 
     /**
