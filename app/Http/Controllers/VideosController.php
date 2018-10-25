@@ -72,7 +72,7 @@ class VideosController extends Controller
      */
     public function edit($id)
     {
-        $categorias = Catvideo::orderBy('id', 'ASC')->pluck('nombre_categoria', 'id');
+        $categorias = Catvideo::orderBy('nombre_categoria', 'ASC')->pluck('nombre_categoria', 'id');
         $video = Video::with('categoria')->find($id);
         return view('backadmin.videos.edit')
         ->with('video', $video)

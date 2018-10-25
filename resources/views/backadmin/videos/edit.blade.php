@@ -11,7 +11,7 @@
 
    <div class="row justify-content-center">
    	<div class="col-6">
-   		{{ Form::open(['route'=>['videos.update', $video->id], 'method' => 'POST', 'files' => true]) }}
+   		{{ Form::open(['route'=>['videos.update', $video->id], 'method' => 'PUT', 'files' => true]) }}
             <div class="form-group">
             	{{ Form::text('nombre_video', $video->nombre_video,['class' => 'form-control', 'required']) }}
             </div>
@@ -19,7 +19,7 @@
                {{ Form::textarea('url', $video->url,['class' => 'form-control', 'rows' => 3, 'required']) }}
             </div>
             <div class="form-group">
-            	{{ Form::select('marca', $categorias, $video->categoria_id,['class' => 'form-control', 'required']) }}
+            	{{ Form::select('categoria_id', $categorias, $video->categoria_id,['class' => 'form-control', 'required']) }}
             </div>
             <div class="form-group">
                <img src="{{ '/sisimages/videos/'.$video->imagen }}" width="200">

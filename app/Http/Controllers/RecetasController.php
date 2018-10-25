@@ -13,7 +13,7 @@ class RecetasController extends Controller
      */
     public function index()
     {
-        //
+        return view('backadmin.recetas.index');
     }
 
     /**
@@ -23,7 +23,7 @@ class RecetasController extends Controller
      */
     public function create()
     {
-        //
+        return view('backadmin.recetas.create');
     }
 
     /**
