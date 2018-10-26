@@ -15,6 +15,13 @@ class CreateInsumoRecetaTable extends Migration
     {
         Schema::create('insumo_receta', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('insumo_id')->unsigned();
+            $table->foreign('insumo_id')->references('id')->on('insumos');
+            $table->integer('receta_id')->unsigned();
+            $table->foreign('receta_id')->references('id')->on('recetas');
+            $table->decimal('cantidad',8,2);
+            $table->integer('medida_id')->unsigned();
+            $table->foreign('medida_id')->references('id')->on('medidas');
             $table->timestamps();
         });
     }

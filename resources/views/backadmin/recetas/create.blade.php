@@ -23,8 +23,8 @@
 	   		  	</div> 
 	   		  	<div class="col-3">
 	   		  		<div class="form-group">
-	   		  			{{ Form::label('masotipo', 'Mesotipo') }}
-	   		  			{{ Form::select('masotipo', ['ectoformo' => 'Ectoformo', 'mesoformo' => 'Mesoformo', 'endoformo' => 'Endoformo', 'vegetariano' => 'Vegetariano', 'vegano' => 'Vegano'], '',['class' => 'form-control', 'required']) }}
+	   		  			{{ Form::label('masotipo', 'Somatotipo') }}
+	   		  			{{ Form::select('masotipo', ['hectomorfo' => 'hectomorfo', 'mesomorfo' => 'Mesomorfo', 'endomorfo' => 'Endomorfo', 'vegetariano' => 'Vegetariano', 'vegano' => 'Vegano'], '',['class' => 'form-control', 'required']) }}
 	   		  		</div>
 	   		  	</div>
 	   		  	<div class="col-3">

@@ -57,6 +57,7 @@
 		          <a class="dropdown-item" href="{{ url('/videos') }}">Videos</a>
 		          <div class="dropdown-divider"></div>
 		          <a class="dropdown-item" href="{{ url('/insumos') }}">Insumos de recetas</a>
+		          <a class="dropdown-item" href="{{ url('/snacks') }}">Snacks</a>
 		          <a class="dropdown-item" href="{{ url('/recetas') }}">Recetas</a>
 
 		        </div>
