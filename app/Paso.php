@@ -9,6 +9,6 @@ class Paso extends Model
     protected $fillable = ['paso', 'receta_id'];
 
     public function receta(){
-    	return $this->belongsTo('Pharma\Receta');
+    	return $this->belongsTo('Intensivettt\Receta');
     }
 }

@@ -12,7 +12,7 @@
    	 <div class="row">
    	 	<div class="col-10 offset-1">
 
-	   		{{Form::open(['route' => 'recetas.store', 'method' => 'POST', 'files' => 'true'])}}
+	   		{{Form::open(['route' => 'recetas.store', 'method' => 'POST', 'files' => true])}}
               <h4>Receta</h4>
 	   		  <div class="row">
 	   		  	<div class="col-3">
@@ -46,7 +46,7 @@
 	   		  		<div class="col-4">
 	   		  			<div class="form-group">
 	   		  				{{ Form::label('insumo_id', 'Insumos') }}
-	   		  				{{ Form::select('insumo_id[]', $insumos, '',['class' => 'form-control insumo','placeholder' => 'Selecciona el insumo', 'required']) }}
+	   		  				{{ Form::select('insumo_id[]', $insumos, '',['class' => 'form-control insumo','placeholder' => 'Selecciona el insumo']) }}
 	   		  			</div>
 	   		  		</div>
 	   		  	   <div class="col-4">
@@ -65,7 +65,7 @@
 	   		  <div class="row">
 	   		  		<div class="col-4">
 	   		  			<div class="form-group">
-	   		  				{{ Form::select('insumo_id[]', $insumos, '',['class' => 'form-control insumo','placeholder' => 'Selecciona el insumo', 'required']) }}
+	   		  				{{ Form::select('insumo_id[]', $insumos, '',['class' => 'form-control insumo','placeholder' => 'Selecciona el insumo']) }}
 	   		  			</div>
 	   		  		</div>
 	   		  	   <div class="col-4">
@@ -82,7 +82,7 @@
 	   		  <div class="row">
 	   		  		<div class="col-4">
 	   		  			<div class="form-group">
-	   		  				{{ Form::select('insumo_id[]', $insumos, '',['class' => 'form-control insumo','placeholder' => 'Selecciona el insumo', 'required']) }}
+	   		  				{{ Form::select('insumo_id[]', $insumos, '',['class' => 'form-control insumo','placeholder' => 'Selecciona el insumo']) }}
 	   		  			</div>
 	   		  		</div>
 	   		  	   <div class="col-4">
@@ -99,7 +99,7 @@
 	   		  <div class="row">
 	   		  		<div class="col-4">
 	   		  			<div class="form-group">
-	   		  				{{ Form::select('insumo_id[]', $insumos, '',['class' => 'form-control insumo','placeholder' => 'Selecciona el insumo', 'required']) }}
+	   		  				{{ Form::select('insumo_id[]', $insumos, '',['class' => 'form-control insumo','placeholder' => 'Selecciona el insumo']) }}
 	   		  			</div>
 	   		  		</div>
 	   		  	   <div class="col-4">
@@ -116,7 +116,7 @@
 	   		  <div class="row">
 	   		  		<div class="col-4">
 	   		  			<div class="form-group">
-	   		  				{{ Form::select('insumo_id[]', $insumos, '',['class' => 'form-control insumo','placeholder' => 'Selecciona el insumo', 'required']) }}
+	   		  				{{ Form::select('insumo_id[]', $insumos, '',['class' => 'form-control insumo','placeholder' => 'Selecciona el insumo']) }}
 	   		  			</div>
 	   		  		</div>
 	   		  	   <div class="col-4">
@@ -133,7 +133,7 @@
 	   		  <div class="row">
 	   		  		<div class="col-4">
 	   		  			<div class="form-group">
-	   		  				{{ Form::select('insumo_id[]', $insumos, '',['class' => 'form-control insumo','placeholder' => 'Selecciona el insumo', 'required']) }}
+	   		  				{{ Form::select('insumo_id[]', $insumos, '',['class' => 'form-control insumo','placeholder' => 'Selecciona el insumo']) }}
 	   		  			</div>
 	   		  		</div>
 	   		  	   <div class="col-4">
@@ -150,7 +150,7 @@
 	   		  <div class="row">
 	   		  		<div class="col-4">
 	   		  			<div class="form-group">
-	   		  				{{ Form::select('insumo_id[]', $insumos, '',['class' => 'form-control insumo','placeholder' => 'Selecciona el insumo', 'required']) }}
+	   		  				{{ Form::select('insumo_id[]', $insumos, '',['class' => 'form-control insumo','placeholder' => 'Selecciona el insumo']) }}
 	   		  			</div>
 	   		  		</div>
 	   		  	   <div class="col-4">
@@ -167,7 +167,7 @@
 	   		  <div class="row">
 	   		  		<div class="col-4">
 	   		  			<div class="form-group">
-	   		  				{{ Form::select('insumo_id[]', $insumos, '',['class' => 'form-control insumo','placeholder' => 'Selecciona el insumo', 'required']) }}
+	   		  				{{ Form::select('insumo_id[]', $insumos, '',['class' => 'form-control insumo','placeholder' => 'Selecciona el insumo']) }}
 	   		  			</div>
 	   		  		</div>
 	   		  	   <div class="col-4">

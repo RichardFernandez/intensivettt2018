@@ -40,11 +40,11 @@
           <tbody>
            @forelse($recetas as $receta) 
             <tr>
-               <td><img src="{{ 'sisimages/suplementos/'.$suplemento->imagen }}" width="100"></td>
                <td>{{ $receta->nombre_receta }}</td>
-               <td>{{ $receta->masotipo }}</td>        
-               <td>{{ $receta->imagen }}</td>      
-               <td>{{ $receta->video }}</td>      
+               <td>{{ $receta->masotipo }}</td> 
+               <td><img src="{{'sisimages/recetas/'.$receta->imagen }}" width="100"></td>     
+               <td>{{ $receta->video }}</td>    
+               <td><a href="{{ route('recetas.show', $receta->id) }}" class="alert alert-primary"><i class="far fa-eye"></i></a></td>
                <td>
                 <a href="{{ route('recetas.edit', $receta->id) }}" class="alert alert-warning"><i class="fas fa-edit"></i></a>
               </td>

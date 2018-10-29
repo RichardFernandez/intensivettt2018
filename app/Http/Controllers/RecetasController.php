@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Intensivettt\Receta;
 use Intensivettt\Insumo;
 use Intensivettt\Medida;
+use Intensivettt\paso;
 
 class RecetasController extends Controller
 {
@@ -43,7 +44,64 @@ class RecetasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        // dd($request);
+
+        if($request->file('imagen')){
+            $file = $request->file('imagen');
+            $name = 'receta_'.time().'.'.$file->getClientOriginalExtension();
+            $path = public_path().'/sisimages/recetas';
+            $file->move($path, $name);
+        }
+
+        $receta = new Receta($request->all());
+        $receta->imagen = $name;
+        $receta->save();
+
+        /*CAPTURO LOS INSUMOS EN LA TABLA PIVOT*/
+          $manytomany = array();
+          $insumos = $request->insumo_id;
+          $cantidadInsumos = 0;
+
+          /*Verifico cuales estan llenos*/
+          foreach($insumos as $insumo){
+              if(!empty($insumo))
+                  $cantidadInsumos++;
+          }
+
+          /*Capturo insumos con su campos pivot*/
+        
+          for($i=0; $i < $cantidadInsumos; $i++){
+           $manytomany[ $request->insumo_id[$i] ] = ['cantidad' => $request->cantidad[$i], 'medida_id' => $request->medida_id[$i]];
+           
+           }
+
+           $receta->insumos()->sync($manytomany);
+
+           /*Captura del proceso*/
+
+               $pasos = $request->paso;
+
+               $valores_no_vacios = 0;
+
+               foreach($pasos as $paso) {
+                 if(!empty($paso)) // Solo si no esta vacío y es un número (is_numeric)
+                   $valores_no_vacios++;
+               }
+           
+
+           for($i=0; $i <= $valores_no_vacios - 1; $i++){
+           
+           $metodologia = new Paso();
+
+           $metodologia->paso = $request->paso[$i];
+           $metodologia->receta()->associate($receta);
+           $metodologia->save();
+
+           }
+
+
+        return redirect('recetas');
     }
 
     /**
@@ -54,7 +112,7 @@ class RecetasController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
