@@ -54,14 +54,15 @@ class RecetasController extends Controller
             $file->move($path, $name);
         }
 
+        else{
+           $name = '';
+        }
+
         $receta = new Receta($request->all());
         $receta->imagen = $name;
         $receta->save();
 
-        else{
-           $receta = new Receta($request->all());
-           $receta->save(); 
-        }
+        
 
         /*CAPTURO LOS INSUMOS EN LA TABLA PIVOT*/
           $manytomany = array();
