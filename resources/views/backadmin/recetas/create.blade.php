@@ -30,7 +30,7 @@
 	   		  	<div class="col-3">
 	   		  		<div class="form-group">
 	   		  			{{ Form::label('video', 'Video') }}
-	   		  			{{ Form::text('video', '',['class' => 'form-control', 'required']) }}
+	   		  			{{ Form::text('video', '',['class' => 'form-control']) }}
 	   		  		</div>
 	   		  	</div>
 	   		  	<div class="col-3">
@@ -215,9 +215,34 @@
 	   		     		  					{{ Form::label('paso', 'Paso 5') }}
 	   		     		  					{{ Form::text('paso[]', '',['class' => 'form-control']) }}
 	   		     		  				</div>
-	   		     		  			</div><div class="col-12">
+	   		     		  			</div>
+	   		     		  			<div class="col-12">
 	   		     		  				<div class="form-group">
 	   		     		  					{{ Form::label('paso', 'Paso 6') }}
+	   		     		  					{{ Form::text('paso[]', '',['class' => 'form-control']) }}
+	   		     		  				</div>
+	   		     		  			</div>
+	   		     		  			<div class="col-12">
+	   		     		  				<div class="form-group">
+	   		     		  					{{ Form::label('paso', 'Paso 7') }}
+	   		     		  					{{ Form::text('paso[]', '',['class' => 'form-control']) }}
+	   		     		  				</div>
+	   		     		  			</div>
+	   		     		  			<div class="col-12">
+	   		     		  				<div class="form-group">
+	   		     		  					{{ Form::label('paso', 'Paso 8') }}
+	   		     		  					{{ Form::text('paso[]', '',['class' => 'form-control']) }}
+	   		     		  				</div>
+	   		     		  			</div>
+	   		     		  			<div class="col-12">
+	   		     		  				<div class="form-group">
+	   		     		  					{{ Form::label('paso', 'Paso 9') }}
+	   		     		  					{{ Form::text('paso[]', '',['class' => 'form-control']) }}
+	   		     		  				</div>
+	   		     		  			</div>
+	   		     		  			<div class="col-12">
+	   		     		  				<div class="form-group">
+	   		     		  					{{ Form::label('paso', 'Paso 10') }}
 	   		     		  					{{ Form::text('paso[]', '',['class' => 'form-control']) }}
 	   		     		  				</div>
 	   		     		  			</div>
