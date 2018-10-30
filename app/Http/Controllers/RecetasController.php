@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Intensivettt\Receta;
 use Intensivettt\Insumo;
 use Intensivettt\Medida;
-use Intensivettt\paso;
+use Intensivettt\Paso;
 
 class RecetasController extends Controller
 {
@@ -57,6 +57,11 @@ class RecetasController extends Controller
         $receta = new Receta($request->all());
         $receta->imagen = $name;
         $receta->save();
+
+        else{
+           $receta = new Receta($request->all());
+           $receta->save(); 
+        }
 
         /*CAPTURO LOS INSUMOS EN LA TABLA PIVOT*/
           $manytomany = array();
