@@ -43,141 +43,304 @@
               <hr>
               <h4>Insumos</h4>
 	   		  <div class="row">
-	   		  		<div class="col-4">
+	   		  		<div class="col-2">
 	   		  			<div class="form-group">
 	   		  				{{ Form::label('insumo_id', 'Insumos') }}
 	   		  				{{ Form::select('insumo_id[]', $insumos, '',['class' => 'form-control insumo','placeholder' => 'Selecciona el insumo']) }}
 	   		  			</div>
 	   		  		</div>
-	   		  	   <div class="col-4">
+	   		  	   <div class="col-2">
 		   		  	   	<div class="form-group">
 		   		  	   		{{ Form::label('cantidad', 'Cantidades') }}
 		   		  	   		{{ Form::number('cantidad[]','',['class' => 'form-control', 'step' => 0.01]) }}
 		   		  	   	</div>
 	   		  	   </div>
-	   		  	   <div class="col-4">
+	   		  	   <div class="col-2">
 		   		  	   	<div class="form-group">
 		   		  	   		{{ Form::label('medida_id', 'Unidades') }}
-		   		  	   		{{ Form::select('medida_id[]', $medidas, '',['class' => 'form-control insumo', 'placeholder' => 'Selecciona la unidad de medida']) }}
+		   		  	   		{{ Form::select('medida_id[]', $medidas, '',['class' => 'form-control insumo', 'placeholder' => 'unidad de medida']) }}
+		   		  	   	</div>
+	   		  	   </div>
+	   		  	   	<div class="col-2">
+	   		  			<div class="form-group">
+	   		  				{{ Form::label('insumo_id', 'Insumos') }}
+	   		  				{{ Form::select('insumo_id[]', $insumos, '',['class' => 'form-control insumo','placeholder' => 'Selecciona el insumo']) }}
+	   		  			</div>
+	   		  		</div>
+	   		  	   <div class="col-2">
+		   		  	   	<div class="form-group">
+		   		  	   		{{ Form::label('cantidad', 'Cantidades') }}
+		   		  	   		{{ Form::number('cantidad[]','',['class' => 'form-control', 'step' => 0.01]) }}
+		   		  	   	</div>
+	   		  	   </div>
+	   		  	   <div class="col-2">
+		   		  	   	<div class="form-group">
+		   		  	   		{{ Form::label('medida_id', 'Unidades') }}
+		   		  	   		{{ Form::select('medida_id[]', $medidas, '',['class' => 'form-control insumo', 'placeholder' => 'unidad de medida']) }}
 		   		  	   	</div>
 	   		  	   </div>
 	   		  </div>
+	   		  <hr>
 	   		  <div class="row">
-	   		  		<div class="col-4">
+	   		  		<div class="col-2">
 	   		  			<div class="form-group">
 	   		  				{{ Form::select('insumo_id[]', $insumos, '',['class' => 'form-control insumo','placeholder' => 'Selecciona el insumo']) }}
 	   		  			</div>
 	   		  		</div>
-	   		  	   <div class="col-4">
+	   		  	   <div class="col-2">
 		   		  	   	<div class="form-group">
 		   		  	   		{{ Form::number('cantidad[]','',['class' => 'form-control', 'step' => 0.01]) }}
 		   		  	   	</div>
 	   		  	   </div>
-	   		  	   <div class="col-4">
+	   		  	   <div class="col-2">
 		   		  	   	<div class="form-group">
-		   		  	   		{{ Form::select('medida_id[]', $medidas, '',['class' => 'form-control insumo', 'placeholder' => 'Selecciona la unidad de medida']) }}
+		   		  	   		{{ Form::select('medida_id[]', $medidas, '',['class' => 'form-control insumo', 'placeholder' => 'unidad de medida']) }}
 		   		  	   	</div>
 	   		  	   </div>
-	   		  </div>
-	   		  <div class="row">
-	   		  		<div class="col-4">
+	   		  	   	<div class="col-2">
 	   		  			<div class="form-group">
 	   		  				{{ Form::select('insumo_id[]', $insumos, '',['class' => 'form-control insumo','placeholder' => 'Selecciona el insumo']) }}
 	   		  			</div>
 	   		  		</div>
-	   		  	   <div class="col-4">
+	   		  	   <div class="col-2">
 		   		  	   	<div class="form-group">
 		   		  	   		{{ Form::number('cantidad[]','',['class' => 'form-control', 'step' => 0.01]) }}
 		   		  	   	</div>
 	   		  	   </div>
-	   		  	   <div class="col-4">
+	   		  	   <div class="col-2">
 		   		  	   	<div class="form-group">
-		   		  	   		{{ Form::select('medida_id[]', $medidas, '',['class' => 'form-control insumo', 'placeholder' => 'Selecciona la unidad de medida']) }}
+		   		  	   		{{ Form::select('medida_id[]', $medidas, '',['class' => 'form-control insumo', 'placeholder' => 'unidad de medida']) }}
 		   		  	   	</div>
 	   		  	   </div>
 	   		  </div>
+	   		  <hr>
 	   		  <div class="row">
-	   		  		<div class="col-4">
+	   		  		<div class="col-2">
 	   		  			<div class="form-group">
 	   		  				{{ Form::select('insumo_id[]', $insumos, '',['class' => 'form-control insumo','placeholder' => 'Selecciona el insumo']) }}
 	   		  			</div>
 	   		  		</div>
-	   		  	   <div class="col-4">
+	   		  	   <div class="col-2">
 		   		  	   	<div class="form-group">
 		   		  	   		{{ Form::number('cantidad[]','',['class' => 'form-control', 'step' => 0.01]) }}
 		   		  	   	</div>
 	   		  	   </div>
-	   		  	   <div class="col-4">
+	   		  	   <div class="col-2">
 		   		  	   	<div class="form-group">
-		   		  	   		{{ Form::select('medida_id[]', $medidas, '',['class' => 'form-control insumo', 'placeholder' => 'Selecciona la unidad de medida']) }}
+		   		  	   		{{ Form::select('medida_id[]', $medidas, '',['class' => 'form-control insumo', 'placeholder' => 'unidad de medida']) }}
 		   		  	   	</div>
 	   		  	   </div>
-	   		  </div>
-	   		  <div class="row">
-	   		  		<div class="col-4">
+	   		  	   	<div class="col-2">
 	   		  			<div class="form-group">
 	   		  				{{ Form::select('insumo_id[]', $insumos, '',['class' => 'form-control insumo','placeholder' => 'Selecciona el insumo']) }}
 	   		  			</div>
 	   		  		</div>
-	   		  	   <div class="col-4">
+	   		  	   <div class="col-2">
 		   		  	   	<div class="form-group">
 		   		  	   		{{ Form::number('cantidad[]','',['class' => 'form-control', 'step' => 0.01]) }}
 		   		  	   	</div>
 	   		  	   </div>
-	   		  	   <div class="col-4">
+	   		  	   <div class="col-2">
 		   		  	   	<div class="form-group">
-		   		  	   		{{ Form::select('medida_id[]', $medidas, '',['class' => 'form-control insumo', 'placeholder' => 'Selecciona la unidad de medida']) }}
+		   		  	   		{{ Form::select('medida_id[]', $medidas, '',['class' => 'form-control insumo', 'placeholder' => 'unidad de medida']) }}
 		   		  	   	</div>
 	   		  	   </div>
 	   		  </div>
+	   		  <hr>
 	   		  <div class="row">
-	   		  		<div class="col-4">
+	   		  		<div class="col-2">
 	   		  			<div class="form-group">
 	   		  				{{ Form::select('insumo_id[]', $insumos, '',['class' => 'form-control insumo','placeholder' => 'Selecciona el insumo']) }}
 	   		  			</div>
 	   		  		</div>
-	   		  	   <div class="col-4">
+	   		  	   <div class="col-2">
 		   		  	   	<div class="form-group">
 		   		  	   		{{ Form::number('cantidad[]','',['class' => 'form-control', 'step' => 0.01]) }}
 		   		  	   	</div>
 	   		  	   </div>
-	   		  	   <div class="col-4">
+	   		  	   <div class="col-2">
 		   		  	   	<div class="form-group">
-		   		  	   		{{ Form::select('medida_id[]', $medidas, '',['class' => 'form-control insumo', 'placeholder' => 'Selecciona la unidad de medida']) }}
+		   		  	   		{{ Form::select('medida_id[]', $medidas, '',['class' => 'form-control insumo', 'placeholder' => 'unidad de medida']) }}
 		   		  	   	</div>
 	   		  	   </div>
-	   		  </div>
-	   		  <div class="row">
-	   		  		<div class="col-4">
+	   		  	   	<div class="col-2">
 	   		  			<div class="form-group">
 	   		  				{{ Form::select('insumo_id[]', $insumos, '',['class' => 'form-control insumo','placeholder' => 'Selecciona el insumo']) }}
 	   		  			</div>
 	   		  		</div>
-	   		  	   <div class="col-4">
+	   		  	   <div class="col-2">
 		   		  	   	<div class="form-group">
 		   		  	   		{{ Form::number('cantidad[]','',['class' => 'form-control', 'step' => 0.01]) }}
 		   		  	   	</div>
 	   		  	   </div>
-	   		  	   <div class="col-4">
+	   		  	   <div class="col-2">
 		   		  	   	<div class="form-group">
-		   		  	   		{{ Form::select('medida_id[]', $medidas, '',['class' => 'form-control insumo', 'placeholder' => 'Selecciona la unidad de medida']) }}
+		   		  	   		{{ Form::select('medida_id[]', $medidas, '',['class' => 'form-control insumo', 'placeholder' => 'unidad de medida']) }}
 		   		  	   	</div>
 	   		  	   </div>
 	   		  </div>
+	   		  <hr>
 	   		  <div class="row">
-	   		  		<div class="col-4">
+	   		  		<div class="col-2">
 	   		  			<div class="form-group">
 	   		  				{{ Form::select('insumo_id[]', $insumos, '',['class' => 'form-control insumo','placeholder' => 'Selecciona el insumo']) }}
 	   		  			</div>
 	   		  		</div>
-	   		  	   <div class="col-4">
+	   		  	   <div class="col-2">
 		   		  	   	<div class="form-group">
 		   		  	   		{{ Form::number('cantidad[]','',['class' => 'form-control', 'step' => 0.01]) }}
 		   		  	   	</div>
 	   		  	   </div>
-	   		  	   <div class="col-4">
+	   		  	   <div class="col-2">
 		   		  	   	<div class="form-group">
-		   		  	   		{{ Form::select('medida_id[]', $medidas, '',['class' => 'form-control insumo', 'placeholder' => 'Selecciona la unidad de medida']) }}
+		   		  	   		{{ Form::select('medida_id[]', $medidas, '',['class' => 'form-control insumo', 'placeholder' => 'unidad de medida']) }}
+		   		  	   	</div>
+	   		  	   </div>
+	   		  	   	<div class="col-2">
+	   		  			<div class="form-group">
+	   		  				{{ Form::select('insumo_id[]', $insumos, '',['class' => 'form-control insumo','placeholder' => 'Selecciona el insumo']) }}
+	   		  			</div>
+	   		  		</div>
+	   		  	   <div class="col-2">
+		   		  	   	<div class="form-group">
+		   		  	   		{{ Form::number('cantidad[]','',['class' => 'form-control', 'step' => 0.01]) }}
+		   		  	   	</div>
+	   		  	   </div>
+	   		  	   <div class="col-2">
+		   		  	   	<div class="form-group">
+		   		  	   		{{ Form::select('medida_id[]', $medidas, '',['class' => 'form-control insumo', 'placeholder' => 'unidad de medida']) }}
+		   		  	   	</div>
+	   		  	   </div>
+	   		  </div>
+	   		  <hr>
+	   		  <div class="row">
+	   		  		<div class="col-2">
+	   		  			<div class="form-group">
+	   		  				{{ Form::select('insumo_id[]', $insumos, '',['class' => 'form-control insumo','placeholder' => 'Selecciona el insumo']) }}
+	   		  			</div>
+	   		  		</div>
+	   		  	   <div class="col-2">
+		   		  	   	<div class="form-group">
+		   		  	   		{{ Form::number('cantidad[]','',['class' => 'form-control', 'step' => 0.01]) }}
+		   		  	   	</div>
+	   		  	   </div>
+	   		  	   <div class="col-2">
+		   		  	   	<div class="form-group">
+		   		  	   		{{ Form::select('medida_id[]', $medidas, '',['class' => 'form-control insumo', 'placeholder' => 'unidad de medida']) }}
+		   		  	   	</div>
+	   		  	   </div>
+	   		  	   	<div class="col-2">
+	   		  			<div class="form-group">
+	   		  				{{ Form::select('insumo_id[]', $insumos, '',['class' => 'form-control insumo','placeholder' => 'Selecciona el insumo']) }}
+	   		  			</div>
+	   		  		</div>
+	   		  	   <div class="col-2">
+		   		  	   	<div class="form-group">
+		   		  	   		{{ Form::number('cantidad[]','',['class' => 'form-control', 'step' => 0.01]) }}
+		   		  	   	</div>
+	   		  	   </div>
+	   		  	   <div class="col-2">
+		   		  	   	<div class="form-group">
+		   		  	   		{{ Form::select('medida_id[]', $medidas, '',['class' => 'form-control insumo', 'placeholder' => 'unidad de medida']) }}
+		   		  	   	</div>
+	   		  	   </div>
+	   		  </div>
+	   		  <hr>
+	   		  <div class="row">
+	   		  		<div class="col-2">
+	   		  			<div class="form-group">
+	   		  				{{ Form::select('insumo_id[]', $insumos, '',['class' => 'form-control insumo','placeholder' => 'Selecciona el insumo']) }}
+	   		  			</div>
+	   		  		</div>
+	   		  	   <div class="col-2">
+		   		  	   	<div class="form-group">
+		   		  	   		{{ Form::number('cantidad[]','',['class' => 'form-control', 'step' => 0.01]) }}
+		   		  	   	</div>
+	   		  	   </div>
+	   		  	   <div class="col-2">
+		   		  	   	<div class="form-group">
+		   		  	   		{{ Form::select('medida_id[]', $medidas, '',['class' => 'form-control insumo', 'placeholder' => 'unidad de medida']) }}
+		   		  	   	</div>
+	   		  	   </div>
+	   		  	   	<div class="col-2">
+	   		  			<div class="form-group">
+	   		  				{{ Form::select('insumo_id[]', $insumos, '',['class' => 'form-control insumo','placeholder' => 'Selecciona el insumo']) }}
+	   		  			</div>
+	   		  		</div>
+	   		  	   <div class="col-2">
+		   		  	   	<div class="form-group">
+		   		  	   		{{ Form::number('cantidad[]','',['class' => 'form-control', 'step' => 0.01]) }}
+		   		  	   	</div>
+	   		  	   </div>
+	   		  	   <div class="col-2">
+		   		  	   	<div class="form-group">
+		   		  	   		{{ Form::select('medida_id[]', $medidas, '',['class' => 'form-control insumo', 'placeholder' => 'unidad de medida']) }}
+		   		  	   	</div>
+	   		  	   </div>
+	   		  </div>
+	   		  <hr>
+	   		  <div class="row">
+	   		  		<div class="col-2">
+	   		  			<div class="form-group">
+	   		  				{{ Form::select('insumo_id[]', $insumos, '',['class' => 'form-control insumo','placeholder' => 'Selecciona el insumo']) }}
+	   		  			</div>
+	   		  		</div>
+	   		  	   <div class="col-2">
+		   		  	   	<div class="form-group">
+		   		  	   		{{ Form::number('cantidad[]','',['class' => 'form-control', 'step' => 0.01]) }}
+		   		  	   	</div>
+	   		  	   </div>
+	   		  	   <div class="col-2">
+		   		  	   	<div class="form-group">
+		   		  	   		{{ Form::select('medida_id[]', $medidas, '',['class' => 'form-control insumo', 'placeholder' => 'unidad de medida']) }}
+		   		  	   	</div>
+	   		  	   </div>
+	   		  	   	<div class="col-2">
+	   		  			<div class="form-group">
+	   		  				{{ Form::select('insumo_id[]', $insumos, '',['class' => 'form-control insumo','placeholder' => 'Selecciona el insumo']) }}
+	   		  			</div>
+	   		  		</div>
+	   		  	   <div class="col-2">
+		   		  	   	<div class="form-group">
+		   		  	   		{{ Form::number('cantidad[]','',['class' => 'form-control', 'step' => 0.01]) }}
+		   		  	   	</div>
+	   		  	   </div>
+	   		  	   <div class="col-2">
+		   		  	   	<div class="form-group">
+		   		  	   		{{ Form::select('medida_id[]', $medidas, '',['class' => 'form-control insumo', 'placeholder' => 'unidad de medida']) }}
+		   		  	   	</div>
+	   		  	   </div>
+	   		  </div>
+	   		  <hr>
+	   		   <div class="row">
+	   		  		<div class="col-2">
+	   		  			<div class="form-group">
+	   		  				{{ Form::select('insumo_id[]', $insumos, '',['class' => 'form-control insumo','placeholder' => 'Selecciona el insumo']) }}
+	   		  			</div>
+	   		  		</div>
+	   		  	   <div class="col-2">
+		   		  	   	<div class="form-group">
+		   		  	   		{{ Form::number('cantidad[]','',['class' => 'form-control', 'step' => 0.01]) }}
+		   		  	   	</div>
+	   		  	   </div>
+	   		  	   <div class="col-2">
+		   		  	   	<div class="form-group">
+		   		  	   		{{ Form::select('medida_id[]', $medidas, '',['class' => 'form-control insumo', 'placeholder' => 'unidad de medida']) }}
+		   		  	   	</div>
+	   		  	   </div>
+	   		  	   	<div class="col-2">
+	   		  			<div class="form-group">
+	   		  				{{ Form::select('insumo_id[]', $insumos, '',['class' => 'form-control insumo','placeholder' => 'Selecciona el insumo']) }}
+	   		  			</div>
+	   		  		</div>
+	   		  	   <div class="col-2">
+		   		  	   	<div class="form-group">
+		   		  	   		{{ Form::number('cantidad[]','',['class' => 'form-control', 'step' => 0.01]) }}
+		   		  	   	</div>
+	   		  	   </div>
+	   		  	   <div class="col-2">
+		   		  	   	<div class="form-group">
+		   		  	   		{{ Form::select('medida_id[]', $medidas, '',['class' => 'form-control insumo', 'placeholder' => 'unidad de medida']) }}
 		   		  	   	</div>
 	   		  	   </div>
 	   		  </div>
