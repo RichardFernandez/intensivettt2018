@@ -51,6 +51,7 @@
 		          <a class="dropdown-item" href="{{ url('/medidas') }}">Unidades de medida</a>
 		          <a class="dropdown-item" href="{{ url('/frases') }}">Frases motivadoras</a>
 		          <a class="dropdown-item" href="{{ url('/bebidas') }}">Bebidas</a>
+		          <a class="dropdown-item" href="{{ url('/preguntas') }}">Preguntas</a>
 
 		          <div class="dropdown-divider"></div>
 		          <a class="dropdown-item" href="{{ url('/suplementos') }}">Suplementos</a>
